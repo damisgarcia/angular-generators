@@ -14,7 +14,6 @@ require "bundler/gem_tasks"
 #     service
 #     value
 #     view
-
 namespace :angular do
   task :common, [:app, :name] do |t,args|
     p "Common Criado #{args.app} #{args.name}"
@@ -25,8 +24,8 @@ namespace :angular do
     p "Controller Criado"
   end
 
-  task :controller[:app,:controller] do |t,args|
-    p "Controller Criado"
+  task :controller do |t,args|
+    directory "app/assets/angular_applications"
   end
 
   task :directive do |t|
