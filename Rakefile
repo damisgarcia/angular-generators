@@ -14,6 +14,7 @@ require "bundler/gem_tasks"
 #     service
 #     value
 #     view
+
 namespace :angular do
   task :common, [:app, :name] do |t,args|
     p "Common Criado #{args.app} #{args.name}"
@@ -25,22 +26,6 @@ namespace :angular do
   end
 
   task :controller[:app,:controller] do |t,args|
-    template =  "'use strict'
-        ###*
-         # @ngdoc function
-         # @name #{args.app}.controller:#{args.controller}
-         # @description
-         # # #{args.controller}
-         # Controller of the #{args.app}
-        ###
-        angular.module '#{args.app}'
-          .controller '#{args.controller}', ->
-            @angularGenerators = [
-              'AngularJS'
-              'Ruby on Rails'
-            ]
-            return
-      "
     p "Controller Criado"
   end
 
